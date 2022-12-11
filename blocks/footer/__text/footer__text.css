@@ -1,0 +1,15 @@
+.footer__text{
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    color: rgba(84, 84, 84, 1);
+    margin: 0px;
+}
+@media (min-width: 320px) and (max-width: 920px){
+    .footer__text{
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        line-height: 16.94px;
+  }
+    }

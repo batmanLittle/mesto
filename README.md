@@ -2,12 +2,12 @@
 
 ### Обзор
 
-* Figma
-* Картинки
+- Figma
+- Картинки
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+- [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
 **Картинки**
 
@@ -15,3 +15,14 @@
 Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
 
 Удачи!
+
+# Проект: Место
+
+Выполнен в ходе обучения в Яндекс.Практикуме, профессия «Веб‑разработчик».
+Доступен по [ссылке](https://batmanlittle.github.io/russian-travel/)
+
+#Описание проекта
+Здесь будет проект о путешествии по России.
+
+#Технологии
+HTML, CSS, Figma и оформлен по [БЭМ](https://ru.bem.info/)

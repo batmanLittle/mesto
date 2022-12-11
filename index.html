@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="./Images/logo.svg" alt="Логотип" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            class="profile__avatar"
+            src="./Images/Avatar.png"
+            alt="Фото Жак-Ив Кусто"
+          />
+          <div class="profile__info">
+            <div class="profile__name">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button class="profile__button">
+            <img class="profile__img" src="./Images/Vector.png" alt="Плюс" />
+          </button>
+        </section>
+        <section class="places">
+          <ul class="place">
+            <li class="place__item">
+              <img
+                class="place__img"
+                src="./Images/Москва.jpg"
+                alt="Фото Москва"
+              />
+              <div class="place__element">
+                <h2 class="place__title">Москва</h2>
+                <img
+                  class="place__icon"
+                  src="./Images/Group.png"
+                  alt="Сердце"
+                />
+              </div>
+            </li>
+            <li class="place__item">
+              <img
+                class="place__img"
+                src="./Images/Новосибирск.jpg"
+                alt="Фото Новосибирск"
+              />
+              <div class="place__element">
+                <h2 class="place__title">Новосибирск</h2>
+                <img
+                  class="place__icon"
+                  src="./Images/Group.png"
+                  alt="Сердце"
+                />
+              </div>
+            </li>
+            <li class="place__item">
+              <img
+                class="place__img"
+                src="./Images/Джылгы-Су, Россия.jpg"
+                alt="Фото Джылгы-Су"
+              />
+              <div class="place__element">
+                <h2 class="place__title">Джылгы-Су</h2>
+                <img
+                  class="place__icon"
+                  src="./Images/Group.png"
+                  alt="Сердце"
+                />
+              </div>
+            </li>
+            <li class="place__item">
+              <img
+                class="place__img"
+                src="./Images/куршская коса.jpg"
+                alt="Фото Куршская коса"
+              />
+              <div class="place__element">
+                <h2 class="place__title">Куршская коса</h2>
+                <img
+                  class="place__icon"
+                  src="./Images/Group.png"
+                  alt="Сердце"
+                />
+              </div>
+            </li>
+            <li class="place__item">
+              <img
+                class="place__img"
+                src="./Images/Линдуловская Роща, Russia.jpg"
+                alt="Фото пгт Рощино"
+              />
+              <div class="place__element">
+                <h2 class="place__title">пгт Рощино</h2>
+                <img
+                  class="place__icon"
+                  src="./Images/Group.png"
+                  alt="Сердце"
+                />
+              </div>
+            </li>
+            <li class="place__item">
+              <img
+                class="place__img"
+                src="./Images/Роза-пик.jpg"
+                alt="Фото Роза-пик"
+              />
+              <div class="place__element">
+                <h2 class="place__title">Роза-пик</h2>
+                <img
+                  class="place__icon"
+                  src="./Images/Group.png"
+                  alt="Сердце"
+                />
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">&copy; 2020 Mesto Russia</p>
+      </footer>
+    </div>
+    <section class="popup">
+      <form class="popup__container">
+        <img class="popup__close" src="./Images/Close Icon.png" alt="Крестик" />
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input
+          class="popup__input-text popup__name"
+          type="text"
+          name="name"
+          placeholder="Имя"
+          value="Жак Ив-Кусто"
+        />
+        <input
+          class="popup__input-text popup__job"
+          type="text"
+          name="job"
+          placeholder="О себе"
+          value="Исследователь океана"
+        />
+        <button type="submit" class="popup__button">Сохранить</button>
+      </form>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>

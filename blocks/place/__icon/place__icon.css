@@ -1,0 +1,11 @@
+.place__icon {
+  width: 22px;
+  height: 19px;
+  margin: 0px;
+}
+.place__icon:hover {
+  opacity: 50%;
+}
+.place__icon:active {
+  background-image: url(../../../Images/Group\ —\ копия.png);
+}

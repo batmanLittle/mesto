@@ -1,0 +1,9 @@
+.place__element{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 246px;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }

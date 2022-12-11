@@ -1,0 +1,17 @@
+.profile__subtitle{
+    margin-top: 0px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    max-width: 336px;
+    margin-bottom: 0px;
+    }
+    @media (min-width: 320px) and (max-width: 920px){
+        .profile__subtitle{
+            text-align: center;
+            font-size: 14px;
+            line-height: 16.94px;
+            margin: auto;
+        }
+        }

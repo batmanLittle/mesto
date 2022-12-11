@@ -1,0 +1,9 @@
+.places{
+    margin-top: 50px;
+    
+} 
+@media (min-width: 320px) and (max-width: 920px){
+    .places{
+        margin-top: 36px;
+    }
+    }
