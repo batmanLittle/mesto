@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <title>Mesto</title>
+    <title>Место</title>
   </head>
   <body>
     <div class="page">
@@ -14,19 +14,15 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="./Images/Avatar.png"
-            alt="Фото Жак-Ив Кусто"
-          />
+          <div class="profile__avatar"></div>
           <div class="profile__info">
             <div class="profile__name">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"></button>
+              <button class="profile__edit-button" type="button"></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <button class="profile__button">
+          <button class="profile__button" type="button">
             <img class="profile__img" src="./Images/Vector.png" alt="Плюс" />
           </button>
         </section>
@@ -40,11 +36,13 @@
               />
               <div class="place__element">
                 <h2 class="place__title">Москва</h2>
-                <img
-                  class="place__icon"
-                  src="./Images/Group.png"
-                  alt="Сердце"
-                />
+                <button class="place__icon" type="button">
+                  <img
+                    class="place__icon"
+                    src="./Images/Group.png"
+                    alt="Сердце"
+                  />
+                </button>
               </div>
             </li>
             <li class="place__item">
@@ -55,11 +53,13 @@
               />
               <div class="place__element">
                 <h2 class="place__title">Новосибирск</h2>
-                <img
-                  class="place__icon"
-                  src="./Images/Group.png"
-                  alt="Сердце"
-                />
+                <button class="place__icon" type="button">
+                  <img
+                    class="place__icon"
+                    src="./Images/Group.png"
+                    alt="Сердце"
+                  />
+                </button>
               </div>
             </li>
             <li class="place__item">
@@ -70,11 +70,13 @@
               />
               <div class="place__element">
                 <h2 class="place__title">Джылгы-Су</h2>
-                <img
-                  class="place__icon"
-                  src="./Images/Group.png"
-                  alt="Сердце"
-                />
+                <button class="place__icon" type="button">
+                  <img
+                    class="place__icon"
+                    src="./Images/Group.png"
+                    alt="Сердце"
+                  />
+                </button>
               </div>
             </li>
             <li class="place__item">
@@ -85,11 +87,13 @@
               />
               <div class="place__element">
                 <h2 class="place__title">Куршская коса</h2>
-                <img
-                  class="place__icon"
-                  src="./Images/Group.png"
-                  alt="Сердце"
-                />
+                <button class="place__icon" type="button">
+                  <img
+                    class="place__icon"
+                    src="./Images/Group.png"
+                    alt="Сердце"
+                  />
+                </button>
               </div>
             </li>
             <li class="place__item">
@@ -100,11 +104,13 @@
               />
               <div class="place__element">
                 <h2 class="place__title">пгт Рощино</h2>
-                <img
-                  class="place__icon"
-                  src="./Images/Group.png"
-                  alt="Сердце"
-                />
+                <button class="place__icon" type="button">
+                  <img
+                    class="place__icon"
+                    src="./Images/Group.png"
+                    alt="Сердце"
+                  />
+                </button>
               </div>
             </li>
             <li class="place__item">
@@ -115,11 +121,13 @@
               />
               <div class="place__element">
                 <h2 class="place__title">Роза-пик</h2>
-                <img
-                  class="place__icon"
-                  src="./Images/Group.png"
-                  alt="Сердце"
-                />
+                <button class="place__icon" type="button">
+                  <img
+                    class="place__icon"
+                    src="./Images/Group.png"
+                    alt="Сердце"
+                  />
+                </button>
               </div>
             </li>
           </ul>
@@ -129,19 +137,24 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
       </footer>
     </div>
-    <section class="popup">
-      <form class="popup__container">
-        <img class="popup__close" src="./Images/CloseIcon.png" alt="Крестик" />
+
+    <div class="popup popup__container">
+      <form class="popup__form" name="popupform">
+        <button class="popup__close">
+          <img src="./Images/CloseIcon.png" alt="Крестик" />
+        </button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <input
-          class="popup__input-text popup__name"
+          class="popup__input popup__input_data_name"
+          name="name"
           type="text"
           name="name"
           placeholder="Имя"
           value="Жак Ив-Кусто"
         />
         <input
-          class="popup__input-text popup__job"
+          class="popup__input popup__input_data_job"
+          name="job"
           type="text"
           name="job"
           placeholder="О себе"
@@ -149,7 +162,8 @@
         />
         <button type="submit" class="popup__button">Сохранить</button>
       </form>
-    </section>
-    <script src="./script.js"></script>
+    </div>
+
+    <script src="./JavaScript/script.js"></script>
   </body>
 </html>

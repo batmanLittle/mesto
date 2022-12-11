@@ -1,4 +1,5 @@
 .profile__edit-button {
+  outline: none;
   height: 24px;
   width: 24px;
   background-image: url(../../../Images/EditButton.png);

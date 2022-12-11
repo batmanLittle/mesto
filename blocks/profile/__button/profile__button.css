@@ -6,6 +6,7 @@
   color: white;
   padding: 0px;
   margin-top: 35px;
+  outline: none;
 }
 .profile__button:hover {
   opacity: 60%;
@@ -17,7 +18,6 @@
     font-size: 27px;
     line-height: 32.68px;
     margin: 0px;
-    padding: 0px;
     width: 100%;
   }
 }

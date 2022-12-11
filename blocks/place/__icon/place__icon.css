@@ -2,11 +2,13 @@
   width: 22px;
   height: 19px;
   margin: 0px;
+  background-size: cover;
+  border: 0px;
+  outline: none;
+  background-color: white;
 }
+
 .place__icon:hover {
   opacity: 50%;
   cursor: pointer;
-}
-.place__icon:active {
-  background-image: url(../../../Images/Group\ —\ копия.png);
 }

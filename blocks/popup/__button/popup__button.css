@@ -1,26 +1,26 @@
-.popup__button{
-    margin-top: 18px;
-    margin-bottom: 0px;
-    border: black;
-    background-color: black;
-    color: white;
-    height: 50px;
-    padding: 0px;
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 21.78px;
-
+.popup__button {
+  outline: none;
+  margin-top: 18px;
+  margin-bottom: 0px;
+  border: black;
+  background-color: black;
+  border-radius: 2px;
+  color: white;
+  min-height: 50px;
+  padding: 0px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
 }
-  @media (min-width: 320px) and (max-width: 500px){
-    .popup__button{
-        margin-top: 45px;
-        height: 46px;
-        font-size: 14px;
-        line-height: 16.94px;
-
+.popup__button:hover {
+  opacity: 80%;
 }
-}
-.popup__button:hover{
-    opacity: 80%;
+@media (min-width: 320px) and (max-width: 500px) {
+  .popup__button {
+    margin-top: 16px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 16.94px;
+  }
 }
