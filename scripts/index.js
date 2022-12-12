@@ -1,7 +1,6 @@
 let popup = document.querySelector(`.popup`);
 let popupProfileButton = document.querySelector(`.profile__edit-button`);
 let popupCloseButton = document.querySelector(`.popup__close`);
-let popupSaveButton = document.querySelector(`.popup__button`);
 
 let formElement = document.querySelector(`.popup__form`);
 
@@ -31,13 +30,6 @@ popupCloseButton.addEventListener(`click`, () => {
   popupClosed();
 });
 
-popupSaveButton.addEventListener(`click`, () => {
-  popupClosed();
-});
-
-popupProfileButton.addEventListener(`click`, (event) => {
-  event.preventDefault();
-  popupOpened();
-});
+popupProfileButton.addEventListener(`click`, popupOpened);
 
 formElement.addEventListener(`submit`, handleFormSubmit);

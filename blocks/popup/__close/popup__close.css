@@ -7,15 +7,19 @@
   border: 0px;
   outline: none;
   background-color: black;
+  background-image: url(../../../Images/CloseIcon.png);
+  background-size: cover;
+  padding: 0px;
+}
+.popup__close:hover {
+  opacity: 60%;
+  cursor: pointer;
 }
 @media (min-width: 320px) and (max-width: 530px) {
   .popup__close {
-    top: -32px;
+    top: -36px;
     right: 0px;
     height: 20px;
     width: 20px;
   }
-}
-.popup__close:hover {
-  opacity: 60%;
 }

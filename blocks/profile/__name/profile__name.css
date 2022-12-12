@@ -1,7 +1,6 @@
 .profile__name {
   display: flex;
   margin-bottom: 16px;
-  margin-bottom: 8px;
   align-items: baseline;
 }
 @media (min-width: 320px) and (max-width: 920px) {
