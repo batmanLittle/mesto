@@ -28,84 +28,19 @@
         </section>
         <section class="places">
           <ul class="place">
-            <li class="place__item">
-              <img
-                class="place__img"
-                src="./Images/Москва.jpg"
-                alt="Фото Москва"
-              />
-              <div class="place__element">
-                <h2 class="place__title">Москва</h2>
-                <button class="place__icon" type="button">
-                  <img src="./Images/Group.png" alt="Сердце" />
-                </button>
-              </div>
-            </li>
-            <li class="place__item">
-              <img
-                class="place__img"
-                src="./Images/Новосибирск.jpg"
-                alt="Фото Новосибирск"
-              />
-              <div class="place__element">
-                <h2 class="place__title">Новосибирск</h2>
-                <button class="place__icon" type="button">
-                  <img src="./Images/Group.png" alt="Сердце" />
-                </button>
-              </div>
-            </li>
-            <li class="place__item">
-              <img
-                class="place__img"
-                src="./Images/Джылгы-Су.jpg"
-                alt="Фото Джылгы-Су"
-              />
-              <div class="place__element">
-                <h2 class="place__title">Джылгы-Су</h2>
-                <button class="place__icon" type="button">
-                  <img src="./Images/Group.png" alt="Сердце" />
-                </button>
-              </div>
-            </li>
-            <li class="place__item">
-              <img
-                class="place__img"
-                src="./Images/куршскаякоса.jpg"
-                alt="Фото Куршская коса"
-              />
-              <div class="place__element">
-                <h2 class="place__title">Куршская коса</h2>
-                <button class="place__icon" type="button">
-                  <img src="./Images/Group.png" alt="Сердце" />
-                </button>
-              </div>
-            </li>
-            <li class="place__item">
-              <img
-                class="place__img"
-                src="./Images/ЛиндуловскаяРоща.jpg"
-                alt="Фото пгт Рощино"
-              />
-              <div class="place__element">
-                <h2 class="place__title">пгт Рощино</h2>
-                <button class="place__icon" type="button">
-                  <img src="./Images/Group.png" alt="Сердце" />
-                </button>
-              </div>
-            </li>
-            <li class="place__item">
-              <img
-                class="place__img"
-                src="./Images/Роза-пик.jpg"
-                alt="Фото Роза-пик"
-              />
-              <div class="place__element">
-                <h2 class="place__title">Роза-пик</h2>
-                <button class="place__icon" type="button">
-                  <img src="./Images/Group.png" alt="Сердце" />
-                </button>
-              </div>
-            </li>
+            <template class="template">
+              <li class="place__item">
+                <img class="place__img" src="#" alt="Фото" />
+                <div class="place__element">
+                  <h2 class="place__title"></h2>
+                  <button class="place__icon" type="button">
+                    <img src="./Images/Group.png" alt="Сердце" />
+                  </button>
+                </div>
+                <img class="place__delete" src="./Images/Trash.svg" alt="" />
+              </li>
+            </template>
+            <!--  -->
           </ul>
         </section>
       </main>
@@ -130,6 +65,27 @@
             name="job"
             type="text"
             placeholder="О себе"
+          />
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup__сards">
+      <div class="popup__container">
+        <form class="popup__form" name="popupform">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__title">Новое место</h2>
+          <input
+            class="popup__input popup__input_data_title"
+            type="text"
+            name="name"
+            placeholder="Название"
+          />
+          <input
+            class="popup__input popup__input_data_img"
+            name="job"
+            type="text"
+            placeholder="Ссылка на картинку"
           />
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
