@@ -3,3 +3,6 @@
   top: 20px;
   right: 20px;
 }
+.place__delete:hover {
+  opacity: 50%;
+}
