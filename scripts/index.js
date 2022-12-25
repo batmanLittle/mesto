@@ -11,7 +11,7 @@ const profileTittle = document.querySelector(`.profile__title`);
 const profileSubtittle = document.querySelector(`.profile__subtitle`);
 
 const popupProfileButtonCard = document.querySelector(`.profile__button`);
-const popupCard = document.querySelector(`.popup_сards`);
+const popupCard = document.querySelector(`.popup__сards`);
 const buttonClosedCard = popupCard.querySelector(`.popup__close`);
 
 const popupImage = document.querySelector(`.popup_image`);
