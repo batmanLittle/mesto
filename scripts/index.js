@@ -11,10 +11,10 @@ const profileTittle = document.querySelector(`.profile__title`);
 const profileSubtittle = document.querySelector(`.profile__subtitle`);
 
 const popupProfileButtonCard = document.querySelector(`.profile__button`);
-const popupCard = document.querySelector(`.popup_сard_add`);
+const popupCard = document.querySelector(`.popup_type_card`);
 const buttonClosedCard = popupCard.querySelector(`.popup__close`);
 
-const popupImage = document.querySelector(`.popup_image_add`);
+const popupImage = document.querySelector(`.popup_type_image`);
 const closedCard = popupImage.querySelector(`.popup__close`);
 
 const cardContainer = document.querySelector(`.place`);
@@ -91,7 +91,7 @@ function addCardEventListener(card) {
 function openedCardImg(card, item) {
   const openedCard = card.querySelector(`.place__img`);
   const openedCardButton = () => {
-    const popupImage = document.querySelector(`.popup_image_add`);
+    const popupImage = document.querySelector(`.popup_type_image`);
     popupImage.classList.add(`popup_opened`);
     popupImage.querySelector(`.popup__zoom-image`).src = item.link;
     popupImage.querySelector(`.popup__zoom-title`).textContent = item.name;
