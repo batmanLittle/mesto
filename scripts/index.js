@@ -11,18 +11,17 @@ const profileTittle = document.querySelector(`.profile__title`);
 const profileSubtittle = document.querySelector(`.profile__subtitle`);
 
 const popupProfileButtonCard = document.querySelector(`.profile__button`);
-const popupCard = document.querySelector(`.popup__сards`);
+const popupCard = document.querySelector(`.popup_сards`);
 const buttonClosedCard = popupCard.querySelector(`.popup__close`);
 
-const popupImage = document.querySelector(`.popup__image`);
+const popupImage = document.querySelector(`.popup_image`);
 const closedCard = popupImage.querySelector(`.popup__close`);
 
 const cardContainer = document.querySelector(`.place`);
 
-const popupCards = document.querySelector(`.popup__сards`);
-const formCards = popupCards.querySelector(`.popup__form`);
-const inputTitle = popupCards.querySelector(`.popup__input_data_title`);
-const inputImg = popupCards.querySelector(`.popup__input_data_img`);
+const formCards = popupCard.querySelector(`.popup__form`);
+const inputTitle = popupCard.querySelector(`.popup__input_data_title`);
+const inputImg = popupCard.querySelector(`.popup__input_data_img`);
 const cardTemplate = document
   .querySelector(`.template`)
   .content.querySelector(`.place__item`);
@@ -92,7 +91,7 @@ function addCardEventListener(card) {
 function openedCardImg(card, item) {
   const openedCard = card.querySelector(`.place__img`);
   const openedCardButton = () => {
-    const popupImage = document.querySelector(`.popup__image`);
+    const popupImage = document.querySelector(`.popup_image`);
     popupImage.classList.add(`popup_opened`);
     popupImage.querySelector(`.popup__zoom-image`).src = item.link;
     popupImage.querySelector(`.popup__zoom-title`).textContent = item.name;
