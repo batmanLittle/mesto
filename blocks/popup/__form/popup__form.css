@@ -1,7 +1,6 @@
 .popup__form {
   box-sizing: border-box;
   /* width: 100%; */
-  width: 430px;
   display: flex;
   flex-direction: column;
   padding-right: 36px;
