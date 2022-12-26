@@ -13,9 +13,9 @@
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__button/profile__button.css);
 @import url(../blocks/profile/__img/profile__img.css);
+@import url(../blocks/places-container/places-container.css);
 @import url(../blocks/places/places.css);
 @import url(../blocks/place/place.css);
-@import url(../blocks/place/__item/place__item.css);
 @import url(../blocks/place/__img/place__img.css);
 @import url(../blocks/place/__element/place__element.css);
 @import url(../blocks/place/__title/place__title.css);

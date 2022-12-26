@@ -26,20 +26,8 @@
             <img class="profile__img" src="./Images/Vector.png" alt="Плюс" />
           </button>
         </section>
-        <section class="places">
-          <ul class="place">
-            <template class="template">
-              <li class="place__item">
-                <img class="place__img" src="#" alt="Фото" />
-                <div class="place__element">
-                  <h2 class="place__title"></h2>
-                  <button class="place__icon" type="button">
-                    <img src="./Images/Group.png" alt="Сердце" />
-                  </button>
-                </div>
-                <img class="place__delete" src="./Images/Trash.svg" alt="" />
-              </li>
-            </template>
+        <section class="places-container">
+          <ul class="places">
             <!--  -->
           </ul>
         </section>
@@ -49,7 +37,7 @@
       </footer>
     </div>
 
-    <div class="popup">
+    <div class="popup popup_type_profile">
       <div class="popup__container">
         <form class="popup__form" name="popupform">
           <button class="popup__close" type="button"></button>
@@ -59,12 +47,14 @@
             type="text"
             name="name"
             placeholder="Имя"
+            required
           />
           <input
             class="popup__input popup__input_data_job"
             name="job"
             type="text"
             placeholder="О себе"
+            required
           />
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
@@ -80,12 +70,14 @@
             type="text"
             name="name"
             placeholder="Название"
+            required
           />
           <input
             class="popup__input popup__input_data_img"
             name="job"
             type="text"
             placeholder="Ссылка на картинку"
+            required
           />
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
@@ -98,7 +90,19 @@
         <h2 class="popup__zoom-title"></h2>
       </div>
     </div>
-
+    <template class="template">
+      <li class="place">
+        <img class="place__img" src="#" alt="Фото" />
+        <div class="place__element">
+          <h2 class="place__title"></h2>
+          <button class="place__icon" type="button">
+            <img src="./Images/Group.png" alt="Сердце" />
+          </button>
+        </div>
+        <img class="place__delete" src="./Images/Trash.svg" alt="" />
+      </li>
+    </template>
+    <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
