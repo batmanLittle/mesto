@@ -7,35 +7,33 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Место</title>
   </head>
-  <body>
-    <div class="page">
-      <header class="header">
-        <img class="header__logo" src="./Images/logo.svg" alt="Логотип" />
-      </header>
-      <main class="content">
-        <section class="profile">
-          <div class="profile__avatar"></div>
-          <div class="profile__info">
-            <div class="profile__name">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" type="button"></button>
-            </div>
-            <p class="profile__subtitle">Исследователь океана</p>
+  <body class="page">
+    <header class="header">
+      <img class="header__logo" src="./Images/logo.svg" alt="Логотип" />
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__avatar"></div>
+        <div class="profile__info">
+          <div class="profile__name">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
           </div>
-          <button class="profile__button" type="button">
-            <img class="profile__img" src="./Images/Vector.png" alt="Плюс" />
-          </button>
-        </section>
-        <section class="places-container">
-          <ul class="places">
-            <!--  -->
-          </ul>
-        </section>
-      </main>
-      <footer class="footer">
-        <p class="footer__text">&copy; 2020 Mesto Russia</p>
-      </footer>
-    </div>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <button class="profile__button" type="button">
+          <img class="profile__img" src="./Images/Vector.png" alt="Плюс" />
+        </button>
+      </section>
+      <section class="places-container">
+        <ul class="places">
+          <!--  -->
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2020 Mesto Russia</p>
+    </footer>
 
     <div class="popup popup_type_profile">
       <div class="popup__container">
@@ -85,14 +83,14 @@
     </div>
     <div class="popup popup_type_image">
       <div class="popup__container">
-        <img class="popup__zoom-image" src="#" alt="Фото" />
+        <img class="popup__zoom-image" src="#" alt="#" />
         <button class="popup__close" type="button"></button>
         <h2 class="popup__zoom-title"></h2>
       </div>
     </div>
     <template class="template">
       <li class="place">
-        <img class="place__img" src="#" alt="Фото" />
+        <img class="place__img" src="#" alt="#" />
         <div class="place__element">
           <h2 class="place__title"></h2>
           <button class="place__icon" type="button">

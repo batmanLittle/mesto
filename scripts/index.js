@@ -21,6 +21,10 @@ const inputImg = cardPopup.querySelector(`.popup__input_data_img`);
 const imagePopupLink = imagePopup.querySelector(`.popup__zoom-image`);
 const imagePopupName = imagePopup.querySelector(`.popup__zoom-title`);
 
+const profilePopupClose = profilePopup.querySelector(`.popup__close`);
+const imagePopupClose = imagePopup.querySelector(`.popup__close`);
+const cardPopupClose = cardPopup.querySelector(`.popup__close`);
+
 const cardTemplate = document
   .querySelector(`.template`)
   .content.querySelector(`.place`);
@@ -40,25 +44,28 @@ function handleSubmitProfileForm(evt) {
   closePopup(profilePopup);
 }
 
+const handleDeleteCard = (event) => {
+  event.target.closest(".place").remove();
+};
+function likeCard(evt) {
+  evt.target.classList.toggle(`place__icon_black`);
+}
 function createCard(item) {
   const card = cardTemplate.cloneNode(true);
   card.querySelector(`.place__title`).textContent = item.name;
   card.querySelector(`.place__img`).src = item.link;
+  card.querySelector(`.place__img`).alt = item.name;
   const cardDelete = card.querySelector(`.place__delete`);
-
-  const deleteCard = () => {
-    card.remove();
-  };
   const imgCard = card.querySelector(`.place__img`);
+
   const openImgCard = () => {
-    openPopup(imagePopup);
     imagePopupLink.src = item.link;
     imagePopupName.textContent = item.name;
+    openPopup(imagePopup);
   };
-  cardDelete.addEventListener(`click`, deleteCard);
-  card.querySelector(`.place__icon`).addEventListener(`click`, function (evt) {
-    evt.target.classList.toggle(`place__icon_black`);
-  });
+
+  cardDelete.addEventListener(`click`, handleDeleteCard);
+  card.querySelector(`.place__icon`).addEventListener(`click`, likeCard);
   imgCard.addEventListener(`click`, openImgCard);
 
   return card;
@@ -102,12 +109,12 @@ profilePopupButton.addEventListener(`click`, () => {
   jobInput.value = profileSubtittle.textContent;
 });
 
-profilePopup.querySelector(`.popup__close`).addEventListener(`click`, () => {
+profilePopupClose.addEventListener(`click`, () => {
   closePopup(profilePopup);
 });
-imagePopup.querySelector(`.popup__close`).addEventListener(`click`, () => {
+imagePopupClose.addEventListener(`click`, () => {
   closePopup(imagePopup);
 });
-cardPopup.querySelector(`.popup__close`).addEventListener(`click`, () => {
+cardPopupClose.addEventListener(`click`, () => {
   closePopup(cardPopup);
 });
