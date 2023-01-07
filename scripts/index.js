@@ -118,33 +118,69 @@ imagePopupClose.addEventListener(`click`, () => {
 cardPopupClose.addEventListener(`click`, () => {
   closePopup(cardPopup);
 });
-// const profilePopup = document.querySelector(`.popup_type_profile`);
-const profileInputPopup = profilePopup.querySelector(`.popup__input`);
+//const profileForm = profilePopup.querySelector(`.popup__form`);
+const profileInputPopup = profileForm.querySelector(`.popup__input`);
 // Выбираем элемент ошибки на основе уникального класса
-const profileError = profilePopup.querySelector(
+const profileError = profileForm.querySelector(
   `.${profileInputPopup.id}-error`
 );
 
 // Функция, которая добавляет класс с ошибкой
-const showProfileInputError = (element) => {
-  element.classList.add(`popup__input_type_error`);
+const showProfileInputError = (profileForm, profileInputPopup, errorMessage) => {
+  const profileError = profileForm.querySelector(
+    `.${profileInputPopup.id}-error`
+  );
+
+  profileInputPopup.classList.add(`popup__input_type_error`);
+  profileError.textContent = errorMessage;
   // Показываем сообщение об ошибке
   profileError.classList.add("popup__input-error_active");
 };
 // Функция, которая удаляет класс с ошибкой
-const hideProfileInputError = (element) => {
-  element.classList.remove(`popup__input_type_error`);
+const hideProfileInputError = (profileForm, profileInputPopup) => {
+  const profileError = profileForm.querySelector(
+    `.${profileInputPopup.id}-error`
+  );
+  profileInputPopup.classList.remove(`popup__input_type_error`);
   profileError.classList.remove("popup__input-error_active");
+  profileError.textContent = ` `;
 };
 // Функция, которая проверяет валидность поля
-const isValid = () => {
+const isValid = (profileForm, profileInputPopup) => {
   if (!profileInputPopup.validity.valid) {
     // Если поле не проходит валидацию, покажем ошибку
-    showProfileInputError(profileInputPopup);
+    showProfileInputError(profileForm, profileInputPopup, profileInputPopup.validationMessage);
   } else {
     // Если проходит, скроем
-    hideProfileInputError(profileInputPopup);
+    hideProfileInputError(profileForm, profileInputPopup);
   }
 };
-// Вызовем функцию isValid на каждый ввод символа
-profileInputPopup.addEventListener("input", isValid);
+const setEventListeners = (profileForm) => {
+  const inputList = Array.from(profileForm.querySelector(`.popup__input`));
+    inputList.forEach((profileInputPopup) => {
+    profileInputPopup.addEventListener(`input`, function ()  {
+    isValid(profileForm, profileInputPopup);
+
+    });
+  });
+};
+
+const enableValidation = () => {
+    
+    const formList = Array.from(profilePopup.querySelectorAll('.popup__form'));
+    formList.forEach((profileForm) => {
+      profileForm.addEventListener('submit',  (evt) => {
+        evt.preventDefault();
+      });
+
+    setEventListeners(profileForm);
+  });
+};
+
+profileForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+});
+
+
+enableValidation(); 
+
