@@ -118,3 +118,33 @@ imagePopupClose.addEventListener(`click`, () => {
 cardPopupClose.addEventListener(`click`, () => {
   closePopup(cardPopup);
 });
+// const profilePopup = document.querySelector(`.popup_type_profile`);
+const profileInputPopup = profilePopup.querySelector(`.popup__input`);
+// Выбираем элемент ошибки на основе уникального класса
+const profileError = profilePopup.querySelector(
+  `.${profileInputPopup.id}-error`
+);
+
+// Функция, которая добавляет класс с ошибкой
+const showProfileInputError = (element) => {
+  element.classList.add(`popup__input_type_error`);
+  // Показываем сообщение об ошибке
+  profileError.classList.add("popup__input-error_active");
+};
+// Функция, которая удаляет класс с ошибкой
+const hideProfileInputError = (element) => {
+  element.classList.remove(`popup__input_type_error`);
+  profileError.classList.remove("popup__input-error_active");
+};
+// Функция, которая проверяет валидность поля
+const isValid = () => {
+  if (!profileInputPopup.validity.valid) {
+    // Если поле не проходит валидацию, покажем ошибку
+    showProfileInputError(profileInputPopup);
+  } else {
+    // Если проходит, скроем
+    hideProfileInputError(profileInputPopup);
+  }
+};
+// Вызовем функцию isValid на каждый ввод символа
+profileInputPopup.addEventListener("input", isValid);
