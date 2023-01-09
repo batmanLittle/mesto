@@ -126,85 +126,80 @@ const profileInputPopup = profileForm.querySelector(`.popup__input`);
 const profileError = profileForm.querySelector(
   `.${profileInputPopup.id}-error`
 );
-
-// Функция, которая добавляет класс с ошибкой
-const showProfileInputError = (
-  profileForm,
-  profileInputPopup,
-  errorMessage
-) => {
-  const profileError = profileForm.querySelector(
-    `.${profileInputPopup.id}-error`
-  );
-
-  profileInputPopup.classList.add(`popup__input_type_error`);
-  profileError.textContent = errorMessage;
-  // Показываем сообщение об ошибке
-  profileError.classList.add("popup__input-error_active");
+const popupForm = document.querySelector(`.popup__form`);
+const formInput = document.querySelector(`.popup__input`);
+const formButton = document.querySelector(`.popup__button`);
+const inputError = popupForm.querySelector(`.${formInput.id}-error`);
+//Функция, которая добавляет класс с ошибкой
+const showInputError = (popupForm, formInput, errorMessage) => {
+  const inputError = popupForm.querySelector(`.${formInput.id}-error`);
+  formInput.classList.add(`popup__input_type_error`);
+  inputError.textContent = errorMessage;
+  inputError.classList.add(`popup__input-error_active`);
 };
-// Функция, которая удаляет класс с ошибкой
-const hideProfileInputError = (profileForm, profileInputPopup) => {
-  const profileError = profileForm.querySelector(
-    `.${profileInputPopup.id}-error`
-  );
-  profileInputPopup.classList.remove(`popup__input_type_error`);
-  profileError.classList.remove("popup__input-error_active");
-  profileError.textContent = ` `;
+//Функция, которая удаляет класс с ошибкой
+const hideInputError = (popupForm, formInput) => {
+  const inputError = popupForm.querySelector(`.${formInput.id}-error`);
+  formInput.classList.remove(`popup__input_type_error`);
+  inputError.classList.remove(`popup__input-error_active`);
+  inputError.textContent = "";
 };
 // Функция, которая проверяет валидность поля
-const isValid = (profileForm, profileInputPopup) => {
-  if (!profileInputPopup.validity.valid) {
-    // Если поле не проходит валидацию, покажем ошибку
-    showProfileInputError(
-      profileForm,
-      profileInputPopup,
-      profileInputPopup.validationMessage
-    );
+const isValid = (popupForm, formInput) => {
+  if (!formInput.validity.valid) {
+    showInputError(popupForm, formInput, formInput.validationMessage);
   } else {
-    // Если проходит, скроем
-    hideProfileInputError(profileForm, profileInputPopup);
+    hideInputError(popupForm, formInput);
   }
 };
-const setEventListeners = (profileForm) => {
-  const inputList = Array.from(profileForm.querySelectorAll(`.popup__input`));
-  profileInputPopup.addEventListener(`input`, function () {
-    toggleButtonState(inputList, popupButtonProfile);
-  });
 
-  inputList.forEach((profileInputPopup) => {
-    profileInputPopup.addEventListener(`input`, function () {
-      isValid(profileForm, profileInputPopup);
-      toggleButtonState(inputList, popupButtonProfile);
+//Функция, которая добавит обработчики сразу всем полям формы
+const setEventListeners = (popupForm) => {
+  const inputList = Array.from(popupForm.querySelectorAll(`.popup__input`));
+
+  toggleButtonState(inputList, formButton);
+
+  inputList.forEach((formInput) => {
+    formInput.addEventListener("input", () => {
+      isValid(popupForm, formInput);
+      toggleButtonState(inputList, formButton);
     });
   });
 };
 
+//Функция, которая добавляет обработчики все формам
 const enableValidation = () => {
-  const formList = Array.from(profilePopup.querySelectorAll(".popup__form"));
-  formList.forEach((profileForm) => {
-    profileForm.addEventListener("submit", (evt) => {
+  const formList = Array.from(document.querySelectorAll(`.popup__form`));
+
+  formList.forEach((popupForm) => {
+    popupForm.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-
-    setEventListeners(profileForm);
+    setEventListeners(popupForm);
   });
 };
 
-profileForm.addEventListener("submit", function (evt) {
+popupForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 });
 
-//Функция для переключения кнопки
+// Функция принимает массив полей
+
 const hasInvalidInput = (inputList) => {
-  return inputList.some((profileInputPopup) => {
-    return !profileInputPopup.validity.valid;
+  return inputList.some((formInput) => {
+    return !formInput.validity.valid;
   });
 };
-const toggleButtonState = (inputList, popupButtonProfile) => {
-  if (hasInvalidInput(inputList)) {
-    popupButtonProfile.classList.add(`popup__button_inactive`);
-  } else {
-    popupButtonProfile.classList.remove(`popup__button_inactive`);
-  }
+//Функция, которая добавляет класс кнопки
+const toggleButtonState = (inputList, formButton) => {
+  const buttonList = Array.from(document.querySelectorAll(`.popup__button`));
+  buttonList.forEach((formButton) => {
+    if (hasInvalidInput(inputList)) {
+      formButton.classList.add(`popup__button_inactive`);
+    } else {
+      formButton.classList.remove(`popup__button_inactive`);
+    }
+  });
 };
+
 enableValidation();
