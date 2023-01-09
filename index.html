@@ -51,9 +51,7 @@
             minlength="2"
             maxlength="40"
           />
-          <span class="name-input-error popup__input-error"
-            >Вы пропустили это поле.</span
-          >
+          <span class="name-input-error popup__input-error"></span>
 
           <input
             id="job-input"
@@ -65,32 +63,36 @@
             minlength="2"
             maxlength="200"
           />
-          <span class="job-input-error popup__input-error"
-          >Вы пропустили это поле.</span
-        >
+          <span class="job-input-error popup__input-error"></span>
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
       </div>
     </div>
     <div class="popup popup_type_card">
       <div class="popup__container">
-        <form class="popup__form" name="popupform">
+        <form class="popup__form" name="popupform" novalidate>
           <button class="popup__close" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
           <input
+            id="title-input"
             class="popup__input popup__input_data_title"
             type="text"
-            name="name"
+            name="title"
             placeholder="Название"
+            minlength="2"
+            maxlength="30"
             required
           />
+          <span class="title-input-error popup__input-error"></span>
           <input
+            id="image-input"
             class="popup__input popup__input_data_img"
-            name="job"
+            name="image"
             type="text"
             placeholder="Ссылка на картинку"
             required
           />
+          <span class="image-input-error popup__input-error"></span>
           <button type="submit" class="popup__button">Сохранить</button>
         </form>
       </div>

@@ -25,6 +25,8 @@ const profilePopupClose = profilePopup.querySelector(`.popup__close`);
 const imagePopupClose = imagePopup.querySelector(`.popup__close`);
 const cardPopupClose = cardPopup.querySelector(`.popup__close`);
 
+const popupButtonProfile = profilePopup.querySelector(`.popup__button`);
+
 const cardTemplate = document
   .querySelector(`.template`)
   .content.querySelector(`.place`);
@@ -126,7 +128,11 @@ const profileError = profileForm.querySelector(
 );
 
 // Функция, которая добавляет класс с ошибкой
-const showProfileInputError = (profileForm, profileInputPopup, errorMessage) => {
+const showProfileInputError = (
+  profileForm,
+  profileInputPopup,
+  errorMessage
+) => {
   const profileError = profileForm.querySelector(
     `.${profileInputPopup.id}-error`
   );
@@ -149,38 +155,56 @@ const hideProfileInputError = (profileForm, profileInputPopup) => {
 const isValid = (profileForm, profileInputPopup) => {
   if (!profileInputPopup.validity.valid) {
     // Если поле не проходит валидацию, покажем ошибку
-    showProfileInputError(profileForm, profileInputPopup, profileInputPopup.validationMessage);
+    showProfileInputError(
+      profileForm,
+      profileInputPopup,
+      profileInputPopup.validationMessage
+    );
   } else {
     // Если проходит, скроем
     hideProfileInputError(profileForm, profileInputPopup);
   }
 };
 const setEventListeners = (profileForm) => {
-  const inputList = Array.from(profileForm.querySelector(`.popup__input`));
-    inputList.forEach((profileInputPopup) => {
-    profileInputPopup.addEventListener(`input`, function ()  {
-    isValid(profileForm, profileInputPopup);
+  const inputList = Array.from(profileForm.querySelectorAll(`.popup__input`));
+  profileInputPopup.addEventListener(`input`, function () {
+    toggleButtonState(inputList, popupButtonProfile);
+  });
 
+  inputList.forEach((profileInputPopup) => {
+    profileInputPopup.addEventListener(`input`, function () {
+      isValid(profileForm, profileInputPopup);
+      toggleButtonState(inputList, popupButtonProfile);
     });
   });
 };
 
 const enableValidation = () => {
-    
-    const formList = Array.from(profilePopup.querySelectorAll('.popup__form'));
-    formList.forEach((profileForm) => {
-      profileForm.addEventListener('submit',  (evt) => {
-        evt.preventDefault();
-      });
+  const formList = Array.from(profilePopup.querySelectorAll(".popup__form"));
+  formList.forEach((profileForm) => {
+    profileForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
 
     setEventListeners(profileForm);
   });
 };
 
-profileForm.addEventListener('submit', function (evt) {
+profileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 });
 
-
-enableValidation(); 
-
+//Функция для переключения кнопки
+const hasInvalidInput = (inputList) => {
+  return inputList.some((profileInputPopup) => {
+    return !profileInputPopup.validity.valid;
+  });
+};
+const toggleButtonState = (inputList, popupButtonProfile) => {
+  if (hasInvalidInput(inputList)) {
+    popupButtonProfile.classList.add(`popup__button_inactive`);
+  } else {
+    popupButtonProfile.classList.remove(`popup__button_inactive`);
+  }
+};
+enableValidation();
