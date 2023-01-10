@@ -95,6 +95,7 @@ function handleSubmitCardsForm(evt) {
   addCard(newCard);
 
   closePopup(cardPopup);
+  cardForm.reset();
 }
 
 renderCards();
@@ -156,7 +157,7 @@ const isValid = (popupForm, formInput) => {
 //Функция, которая добавит обработчики сразу всем полям формы
 const setEventListeners = (popupForm) => {
   const inputList = Array.from(popupForm.querySelectorAll(`.popup__input`));
-
+  const formButton = popupForm.querySelector(`.popup__button`);
   toggleButtonState(inputList, formButton);
 
   inputList.forEach((formInput) => {
@@ -172,8 +173,8 @@ const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll(`.popup__form`));
 
   formList.forEach((popupForm) => {
-    popupForm.addEventListener("submit", function (evt) {
-      evt.preventDefault();
+    popupForm.addEventListener("submit", function () {
+      disabledButton(popupForm);
     });
     setEventListeners(popupForm);
   });
@@ -198,5 +199,10 @@ const toggleButtonState = (inputList, formButton) => {
     formButton.classList.remove(`popup__button_inactive`);
   }
 };
+function disabledButton(popupForm) {
+  const formButton = popupForm.querySelector(`.popup__button`);
+  formButton.classList.add(`popup__button_inactive`);
+  formButton.setAttribute("disabled", "disabled");
+}
 
 enableValidation();
