@@ -192,14 +192,11 @@ const hasInvalidInput = (inputList) => {
 };
 //Функция, которая добавляет класс кнопки
 const toggleButtonState = (inputList, formButton) => {
-  const buttonList = Array.from(document.querySelectorAll(`.popup__button`));
-  buttonList.forEach((formButton) => {
-    if (hasInvalidInput(inputList)) {
-      formButton.classList.add(`popup__button_inactive`);
-    } else {
-      formButton.classList.remove(`popup__button_inactive`);
-    }
-  });
+  if (hasInvalidInput(inputList)) {
+    formButton.classList.add(`popup__button_inactive`);
+  } else {
+    formButton.classList.remove(`popup__button_inactive`);
+  }
 };
 
 enableValidation();
